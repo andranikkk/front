@@ -7,8 +7,8 @@ const nextConfig = {
 	async rewrites() {
 		return [
 			{
-				source: '/uploads/:path*',
-				destination: `/${process.env.SERVER_URL}/uploads/:path*`
+				source: '/back/uploads/:path*',
+				destination: `${process.env.SERVER_URL}/uploads/:path*`
 			}
 		]
 	}

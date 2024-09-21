@@ -1,5 +1,7 @@
 import '@/assets/styles/globals.scss'
 
+import { APP_URL } from '@/config/url.config'
+
 import { SITE_DESCRIPTION, SITE_NAME } from '@/constants/seo.constants'
 
 import Providers from './providers'
@@ -13,7 +15,7 @@ export const metadata: Metadata = {
 		template: `%s | ${SITE_NAME}`
 	},
 	description: SITE_DESCRIPTION,
-	metadataBase: new URL(process.env.APP_URL as string),
+	metadataBase: new URL(APP_URL as string),
 	openGraph: {
 		type: 'website',
 		siteName: SITE_NAME,
