@@ -1,3 +1,5 @@
+import { IMovie } from './movie.types'
+
 export enum UserRole {
 	USER = 'USER',
 	ADMIN = 'ADMIN'
@@ -10,7 +12,7 @@ export interface IUser {
 	avatarPath: string
 	role: UserRole
 	isHasPremium: boolean
-	favorites: any[]
+	favorites: IMovie[]
 }
 
 export interface IEditUserInput

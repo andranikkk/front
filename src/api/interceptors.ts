@@ -4,6 +4,7 @@ import {
 	getAccessToken,
 	removeFromStorage
 } from '@/services/auth/auth-token.service'
+import { authService } from '@/services/auth/auth.service'
 
 import { errorCatch } from './error'
 import axios, { type CreateAxiosDefaults } from 'axios'
@@ -54,3 +55,5 @@ axiosWithAuth.interceptors.response.use(
 		throw error
 	}
 )
+
+export { axiosClassic, axiosWithAuth }
