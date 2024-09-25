@@ -2,7 +2,7 @@ import Auth from './Auth'
 import { Metadata } from 'next'
 import React from 'react'
 
-export const metedata: Metadata = {
+export const metadata: Metadata = {
 	title: 'Авторизация'
 }
 export default function AuthPage() {
