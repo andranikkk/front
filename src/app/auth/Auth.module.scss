@@ -9,3 +9,23 @@
 		@apply h-full bg-red-700 lg:flex hidden items-center justify-center;
 	}
 }
+
+.content {
+	@apply w-[320px] items-center justify-center;
+}
+
+.button {
+	@apply flex rounded-lg w-full my-4;
+}
+
+.heading {
+	@apply text-2xl font-semibold text-center mb-4;
+}
+
+.redirect {
+	@apply flex items-center;
+}
+
+.redirectButton {
+	@apply text-red-500 ml-3;
+}

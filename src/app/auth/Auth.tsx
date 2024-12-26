@@ -7,6 +7,7 @@ import { IAuthForm } from '@/types/auth.types'
 
 import styles from './Auth.module.scss'
 import AuthFields from './AuthFields'
+import { useAuthMutation } from './useAuthMutatuion'
 import Image from 'next/image'
 import React, { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
@@ -23,34 +24,60 @@ const Auth: React.FC = () => {
 	})
 	const [isLoginForm, setIsLoginForm] = useState(true)
 
+	const { mutate } = useAuthMutation(isLoginForm, reset)
+
 	const onSubmit: SubmitHandler<IAuthForm> = data => {
-		console.log(data, 'data')
+		mutate(data)
 	}
 
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.left}>
-				<Heading>{isLoginForm ? 'Авторизация' : 'Регистрация'}</Heading>
-				<form onSubmit={handleSubmit(onSubmit)}>
-					<AuthFields
-						register={register}
-						errors={errors}
-						isLoginForm={isLoginForm}
-					/>
-					<Button className={styles.button}>
-						{isLoginForm ? 'Войти' : 'Зарегистрироваться'}
-					</Button>
-					<button
-						type='button'
-						onClick={() => setIsLoginForm(isLoginForm ? false : true)}
-						className='text-red-500'
-					>
-						{isLoginForm ? 'Зарегистрироваться' : 'Войти'}
-					</button>
-				</form>
+				<div className={styles.content}>
+					<Heading className={styles.heading}>
+						{isLoginForm ? 'Авторизация' : 'Регистрация'}
+					</Heading>
+					<form onSubmit={handleSubmit(onSubmit)}>
+						<AuthFields
+							register={register}
+							errors={errors}
+							isLoginForm={isLoginForm}
+						/>
+						<Button className={styles.button}>
+							{isLoginForm ? 'Войти' : 'Зарегистрироваться'}
+						</Button>
+						{isLoginForm ? (
+							<div className={styles.redirect}>
+								<p>У вас нет аккаунта?</p>
+								<button
+									type='button'
+									onClick={() =>
+										setIsLoginForm(isLoginForm ? false : true)
+									}
+									className={styles.redirectButton}
+								>
+									Зарегистрироваться
+								</button>
+							</div>
+						) : (
+							<div className={styles.redirect}>
+								<p>Уже есть аккаунт?</p>
+								<button
+									type='button'
+									onClick={() =>
+										setIsLoginForm(isLoginForm ? false : true)
+									}
+									className={styles.redirectButton}
+								>
+									Войти
+								</button>
+							</div>
+						)}
+					</form>
+				</div>
 			</div>
 			<div className={styles.right}>
-				<PiFilmReelFill size={150} fill='red' />
+				<PiFilmReelFill size={150} fill='white' />
 			</div>
 		</div>
 	)

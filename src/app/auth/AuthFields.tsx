@@ -56,6 +56,7 @@ const AuthFields: React.FC<IAuthFields> = ({
 						message: 'Пожалуйста, введите пароль, мин. 3 символа'
 					}
 				})}
+				type='password'
 				placeholder='Пароль'
 				error={errors.password}
 			/>
