@@ -18,11 +18,11 @@ const Logo: React.FC = () => {
 			<Image src='/images/logo.png' alt='CinemaHub' width={50} height={50} />
 			<div
 				className={cn(
-					'font-semibold text-2xl text-purple-300',
+					'font-semibold text-2xl text-green-300',
 					font.className
 				)}
 			>
-				Cinema<span className='text-green-300'>Hub</span>
+				Cinema<span className='text-purple-300'>Hub</span>
 			</div>
 		</Link>
 	)

@@ -1,6 +1,5 @@
-import type { Config } from 'tailwindcss'
-
-export const config: Config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
 	content: [
 		'./src/pages/**/*.{js,ts,jsx,tsx,mdx}',
 		'./src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -11,16 +10,16 @@ export const config: Config = {
 			colors: {
 				primary: '#B61C1C1',
 				black: '#000000',
-				white: '#FFFFFF',
-				gray: {
-					300: '#252525',
-					500: '#999AA5',
-					600: '#66676E',
-					700: '#38373A',
-					800: '#232323',
-					900: '#100f12',
-					950: '#999999'
-				}
+				white: '#FFFFFF'
+				// gray: {
+				// 	300: '#252525',
+				// 	500: '#999AA5',
+				// 	600: '#66676E',
+				// 	700: '#38373A',
+				// 	800: '#232323',
+				// 	900: '#100f12',
+				// 	950: '#999999'
+				// }
 			},
 			keyframes: {
 				fade: {

@@ -26,10 +26,10 @@ const AuthFields: React.FC<IAuthFields> = ({
 			{!isLoginForm && (
 				<Field
 					{...register('name', {
-						required: 'Имя не может быть пустым',
+						required: 'Имя не может быть пустым!',
 						minLength: {
 							value: 1,
-							message: 'Пожалуйста, введите имя'
+							message: 'Пожалуйста, введите имя.'
 						}
 					})}
 					placeholder='Имя'
@@ -38,10 +38,10 @@ const AuthFields: React.FC<IAuthFields> = ({
 			)}
 			<Field
 				{...register('email', {
-					required: 'Email обязателен',
+					required: 'Email обязателен!',
 					pattern: {
 						value: validEmail,
-						message: 'Пожалуйста, введите Email'
+						message: 'Пожалуйста, введите Email.'
 					}
 				})}
 				placeholder='Email'
@@ -50,10 +50,10 @@ const AuthFields: React.FC<IAuthFields> = ({
 
 			<Field
 				{...register('password', {
-					required: 'Пароль обязателен',
+					required: 'Пароль обязателен!',
 					minLength: {
 						value: 3,
-						message: 'Пожалуйста, введите пароль, мин. 3 символа'
+						message: 'Пожалуйста, введите пароль, мин. 3 символа.'
 					}
 				})}
 				type='password'

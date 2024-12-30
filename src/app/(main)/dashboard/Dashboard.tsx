@@ -29,7 +29,9 @@ const Dashboard: React.FC = () => {
 	return (
 		<div className='px-6'>
 			<div className={styles.wrapper}>
-				<Heading className={styles.heading}>Привет, {user.name}</Heading>
+				<Heading className={styles.heading}>
+					Привет, <span className='text-green-200'>{user.name}</span>
+				</Heading>
 				<div className={styles.avatar}>
 					<Image
 						src={user.avatarPath}
