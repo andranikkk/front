@@ -1,6 +1,6 @@
 'use client'
 
-import { Icon } from '@/components/ui/icon'
+import Icon from '@/components/ui/Icon'
 
 import styles from './Menu.module.scss'
 import { IMenuItem } from './menu.interface'
@@ -19,7 +19,7 @@ const MenuItem: React.FC<{ item: IMenuItem }> = ({ item }) => {
 			})}
 		>
 			<Icon name={item.icon} className={styles.icon} />
-			{item.value}
+			{item.name}
 		</Link>
 	)
 }

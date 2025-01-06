@@ -16,7 +16,7 @@ export const useGenresMenu = () => {
 						({
 							icon: genre.icon,
 							link: PUBLIC_URL.genre(genre.slug),
-							value: genre.name
+							name: genre.name
 						}) as IMenuItem
 				)
 				.splice(0, 4)

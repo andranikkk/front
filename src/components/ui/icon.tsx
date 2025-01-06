@@ -9,8 +9,10 @@ interface IIcon {
 	className?: string
 }
 
-export const Icon: FC<IIcon> = ({ name, className }) => {
+const Icon: FC<IIcon> = ({ name, className }) => {
 	const IconComponent = Icons[name]
 
 	return <IconComponent className={cn('size-4', className)} />
 }
+
+export default Icon
