@@ -3,6 +3,7 @@ import { PUBLIC_URL } from '@/config/url.config'
 import { IMovie } from '@/types/movie.types'
 
 import styles from './SearchList.module.scss'
+import { NextConfig } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -22,8 +23,8 @@ const SearchList: React.FC<ISearchList> = ({ movies }) => {
 					>
 						<Image
 							src={movie.poster}
-							width={70}
-							height={80}
+							width={80}
+							height={90}
 							alt={movie.title}
 							objectFit='cover'
 							objectPosition='top'
