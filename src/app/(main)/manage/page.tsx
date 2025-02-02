@@ -1,7 +1,9 @@
+import MainStatistics from '@/components/ui/admin/main-statistics/MainStatistics'
+import MiddleStatistics from '@/components/ui/admin/middle-statistics/MiddleStatistics'
+
 import { NO_INDEX_PAGE } from '@/constants/seo.constants'
 
 import { Metadata } from 'next'
-import React from 'react'
 
 export const metadata: Metadata = {
 	title: 'Админ панель',
@@ -9,5 +11,10 @@ export const metadata: Metadata = {
 }
 
 export default function AdminPage() {
-	return <div>AdminPage</div>
+	return (
+		<div className='px-6'>
+			<MainStatistics />
+			<MiddleStatistics />
+		</div>
+	)
 }

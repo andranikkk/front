@@ -1,7 +1,7 @@
 .button {
 	@apply items-center justify-center inline-flex transition-colors
   focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50
-  py-2 text-sm;
+  py-2;
 }
 
 .default {

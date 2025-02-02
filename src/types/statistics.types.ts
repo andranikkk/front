@@ -1,9 +1,9 @@
-interface ITopMovie {
+export interface ITopMovie {
 	title: string
 	views: number
 }
 
-interface ISalesByWeek {
+export interface ISalesByWeek {
 	date: string
 	total: number
 }
