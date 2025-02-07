@@ -1,0 +1,11 @@
+.actions {
+	@apply flex items-center gap-4;
+
+	> button {
+		@apply border-none bg-transparent to-primary/80 outline-none transition-opacity hover:to-primary;
+
+		> * {
+			@apply size-5;
+		}
+	}
+}

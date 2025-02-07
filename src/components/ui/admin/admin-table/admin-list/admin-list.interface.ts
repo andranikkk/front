@@ -5,7 +5,7 @@ export interface IListItem {
 	items: string[]
 }
 
-interface IAdminListItem {
+export interface IAdminListItem {
 	listItem: IListItem
 	removeHandler?: () => void
 }

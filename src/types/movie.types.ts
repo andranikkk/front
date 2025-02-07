@@ -1,5 +1,6 @@
 import { IActor } from './actor.types'
 import { IGenre } from './genre.types'
+import { IReview } from './review.types'
 
 export interface IMovie {
 	id: string
@@ -8,7 +9,7 @@ export interface IMovie {
 	title: string
 	slug: string
 	videoUrl: string
-	reviews: number
+	reviews: IReview[]
 	actors: IActor[]
 	genres: IGenre[]
 	duration: number

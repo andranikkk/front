@@ -1,6 +1,6 @@
 import Icon from '../Icon'
 import styles from './SearchField.module.scss'
-import React, { ChangeEvent, FC } from 'react'
+import { ChangeEvent, FC } from 'react'
 
 interface ISearchField {
 	searchTerm: string
@@ -13,7 +13,7 @@ const SearchField: FC<ISearchField> = ({ searchTerm, handleSearch }) => {
 			<Icon name='LuSearch' className={styles.icon} />
 			<input
 				type='text'
-				placeholder='Поиск'
+				placeholder='Поиск...'
 				value={searchTerm}
 				onChange={handleSearch}
 			/>
