@@ -40,7 +40,7 @@ export enum PaymentStatus {
 export interface IPayment {
 	id: string
 	status: PaymentStatus
-	amount: Amount
+	amount: number
 	user: IUser
-	created_at: string
+	createdAt: string
 }

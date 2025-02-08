@@ -2,7 +2,7 @@ import { IListItem } from '@/components/ui/admin/admin-table/admin-list/admin-li
 
 import { reviewService } from '@/services/review.service'
 
-import { getNameAndEmail } from '@/utils/movie/getNameAndEmail'
+import { getNameAndEmail } from '@/utils/genre/getNameAndEmail'
 
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useMemo } from 'react'
@@ -15,10 +15,8 @@ export const useAdminReviews = () => {
 		queryKey: ['get reviews for admin dashboard'],
 		queryFn: () => reviewService.getAll(),
 		select: data =>
-			data.map((review): IListItem => {
-				console.log(review, 'review')
-
-				return {
+			data.map(
+				(review): IListItem => ({
 					id: review.id,
 					items: [
 						Array.from({ length: review.rating })
@@ -27,11 +25,9 @@ export const useAdminReviews = () => {
 						getNameAndEmail(review.user.name, review.user.email),
 						review.movie.title
 					]
-				}
-			})
+				})
+			)
 	})
-
-	console.log(reviews, 'reviews ,><><><><><>')
 
 	const { mutateAsync: deleteAsync } = useMutation({
 		mutationKey: ['delete review'],
